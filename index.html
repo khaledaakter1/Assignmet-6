@@ -1,73 +1,241 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Peddy</title>
-    <!-- tailwind css cdn -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- tailwind css cdn end -->
-
-    <!-- daisy uli cdn -->
-
+    <!-- font awsome -->
     <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font icon google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!-- daisyui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
       rel="stylesheet"
       type="text/css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-      <!-- daisy uli cdn end -->
-       <!---font awesome cdn-->
-        <!-- Add Font Awesome CDN -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!---font awesome cdn-->
-       <!-- css link -->
-     <link rel="stylesheet" href="style.css">
-      <!-- css link end -->
-</head><body class="bg-gray-50">
+    <!-- css -->
+     <link rel="stylesheet" href="./styles/main.css">
+  </head>
+  <body>
+    <header>
+      <nav
+        class="w-11/12 lg:w-4/5 mx-auto flex justify-between items-center h-24"
+      >
+        <div class="cursor-pointer flex gap-3 items-center">
+          <img src="./images/logo.webp" alt="logo" />
+          <p class="font-bold text-2xl">Peddy</p>
+        </div>
+        <ul class="flex items-center gap-5 font-medium text-lg">
+          <li class="text-zinc-500 hover:text-black"><a href="">Home</a></li>
+          <li class="text-zinc-500 hover:text-black"><a href="">Shop</a></li>
+          <li class="text-zinc-500 hover:text-black"><a href="">Contact</a></li>
+        </ul>
+        <div>
+          <span
+            class="material-symbols-outlined lg:text-5xl cursor-pointer text-zinc-500 hover:text-black"
+          >
+          <i class="fas fa-user"></i>
+          </span>
+        </div>
+      </nav>
+    </header>
+    <!-- main part -->
+    <main>
+      <!-- banner section  -->
+      <section class="w-11/12 lg:w-7/12 mx-auto space-y-8">
+        <div class="text-center space-y-5">
+          <p class="font-bold text-zinc-500 text-2xl">
+            Bringing Families Together  <span class="text-red-500">❤️</span></h2>
+          </p>
+          <h2 class="font-bold text-5xl">Your Path to Adoption Starts Here</h2>
+          <p>
+            We provide cute animals for animal lovers we have variety of animals like dog cat rabbit and bird so you can adapt the animal you like.
+          </p>
+          <button
+            onclick="adoptYour()"
+            class="font-medium text-lg hover:opacity-90 hover:ring-2 hover:ring-[#0e7a81] py-2.5 px-6 text-white bg-[#0e7a81] rounded-xl"
+          >
+            View More
+          </button>
+        </div>
+        <div class="w-full">
+          <img src="./images/pet.webp" class="w-full object-cover" alt="" />
+        </div>
+      </section>
 
-    <!-- Header -->
-    <header class="flex justify-between items-center p-5 shadow-md bg-white">
-        <div class="flex items-center text-xl font-bold">
-            
-            <div>
-    
-                  </div>
-                <img src="images/logo.webp" alt="">
-                <p class="text-4xl font-semibold">Paddy</p>
+      <!-- adopt your best friend -->
+      <section class="w-11/12 lg:w-10/12 mx-auto my-20 text-center space-y-10" id="adoptYour">
+        <div class="md:w-[600px] mx-auto space-y-3">
+          <h2 class="font-bold text-4xl capitalize">adopt your best friend</h2>
+          <p>
+            We have cute pets you like as your best friend.
+          </p>
+        </div>
+        <div
+          id="pedCategories"
+          class="grid grid-cols-1 md:grid-cols-4 md:gap-10 lg:gap-20 gap-5"
+        >
+          <!-- dynamic category button -->
+        </div>
+      </section>
+      <!-- best deal  -->
+      <section class="w-11/12 lg:w-10/12 mx-auto my-20 space-y-10">
+        <div class="flex justify-between">
+          <p class="text-2xl font-medium">Best Deal For you</p>
+          <button
+            class="font-medium text-lg hover:opacity-90 hover:ring-2 hover:ring-[#0e7a81] py-2.5 px-6 text-white bg-[#0e7a81] rounded-xl"
+            onclick="sortByPrice()"
+          >
+            Sort by Price
+          </button>
+        </div>
+        <div class="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="xl:col-span-3 md:col-span-2 lg:col-span-3 grid md:grid-cols-2 lg:grid-cols-3 gap-5 relative" id="showCard">
+            <!-- dynamic card show -->
+             
+          </div>
 
+          <div
+            class="p-2 md:col-span-2 lg:col-span-3 xl:col-span-1 border-2 rounded-xl flex justify-between flex-wrap content-start gap-5 "
+            id="showLikeImg"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="w-full bg-black text-white">
+      <div
+        class="w-11/12 lg:w-4/5 mx-auto py-20 flex justify-between flex-col md:flex-row gap-10 md:gap-0"
+      >
+        <div class="space-y-10">
+          <div class="cursor-pointer flex gap-3 items-center">
+            <img src="./images/logo.webp" alt="" />
+            <p class="font-bold text-2xl">Paddy</p>
+          </div>
+          <div>
+            <p><b>Location:</b> av. Washington 165, NY CA 54003</p>
+            <p><b>Phone:</b> +31 85 964 47 25</p>
+            <p><b>Email:</b> info@yourdomain.com</p>
+            <p><b>Openings hours:</b> 9.00 AM - 5.00 PM</p>
+          </div>
+          <div class="space-x-5">
+            <a href=""><i class="fa-brands fa-facebook text-3xl"></i></a>
+            <a href=""><i class="fa-solid fa-x text-3xl"></i></a>
+            <a href=""><i class="fa-brands fa-youtube text-3xl"></i></a>
+            <a href=""><i class="fa-brands fa-instagram text-3xl"></i></a>
+          </div>
+        </div>
+        <div class="space-y-10">
+          <div>
+            <p class="text-xl font-bold">Useful Links</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <a
+              href=""
+              class="text-zinc-500 hover:text-white text-lg font-medium"
+              >Home</a
+            >
+            <a
+              href=""
+              class="text-zinc-500 hover:text-white text-lg font-medium"
+              >About Us</a
+            >
+            <a
+              href=""
+              class="text-zinc-500 hover:text-white text-lg font-medium"
+              >Animals</a
+            >
+            <a
+              href=""
+              class="text-zinc-500 hover:text-white text-lg font-medium"
+              >Foundation</a
+            >
+            <a
+              href=""
+              class="text-zinc-500 hover:text-white text-lg font-medium"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div class="space-y-10">
+          <p class="text-xl font-bold">Drop a Message</p>
+          <form action="" class="flex flex-col gap-3">
+            <input
+              type="email"
+              name=""
+              id=""
+              class="text-lg p-3 rounded-xl bg-zinc-600 outline-none border border-zinc-600 focus:border-[#0e7a81]"
+              placeholder="Enter your email"
+            />
+            <input
+              type="submit"
+              value="Submit"
+              class="font-medium text-lg rounded-xl bg-[#0e7a81] py-3 px-6"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <!-- success modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="my_modal_2" class="modal">
+      <div class="modal-box text-center">
+        <h3 class="text-5xl font-bold text-green-500">Success!</h3>
+        <p class="py-4 font-bold text-3xl" id="showCounter">3</p>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- details -->
+    <!-- You can open the modal using ID.showModal() method -->
+    <dialog id="my_modal_4" class="modal">
+      <div class="modal-box w-5/12 max-w-5xl h-4/5 flex flex-col justify-between">
+        <div class="space-y-10">
+          <div class="w-full">
+            <img id="detailsImg" class="w-full h-full rounded-xl object-cover" alt="">
+          </div>
+          <div class="space-y-10">
+            <div class="grid grid-cols-2">
+                <h3 id="detailsName" class="font-bold text-xl col-span-2 mb-3"></h3>
+                <p class="flex items-center gap-1.5"><img src="./images/Frame.png" alt=""> <span id="detailsBreed"></span></p>
+                <p class="flex items-center gap-1.5"><img src="./images/Frame (1).png" alt=""> <span id="detailsBirth"></span></p>
+                <p class="flex items-center gap-1.5"><img src="./images/Frame (2).png" alt=""> <span id="detailsGender"></span></p>
+                <p class="flex items-center gap-1.5"><img src="./images/Frame (3).png" alt=""> <span id="detailsPrice"></span></p>
+                <p class="flex items-center gap-1.5"><img src="./images/Frame (2).png" alt=""> <span id="detailsVer"></span></p>
             </div>
+            <div>
+              <h3 class="font-bold text-xl mb-2">Details Information</h3>
+              <p id="detailsDiscription"></p>
+            </div>
+          </div> 
         </div>
-        <nav>
-            <ul class="flex space-x-6 text-lg">
-                <li><a href="#" class="text-gray-700 hover:text-teal-600">Home</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-teal-600">Shop</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-teal-600">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="text-2xl">
-            <i class="fas fa-user"></i>
-
+        <div class="modal-action w-full">
+          <form method="dialog" class="w-full">
+            <!-- if there is a button, it will close the modal -->
+            <button class="w-full bg-zinc-200 py-3 rounded-xl hover:ring-2 hover:ring-zinc-200 text-lg font-bold">Close</button>
+          </form>
         </div>
-    </header>
+      </div>
+    </dialog>
 
-    <!-- Hero Section -->
-    <section class="flex flex-col items-center text-center py-20">
-        <h2 class="text-lg text-gray-500 mb-4">Bringing Families Together <span class="text-red-500">❤️</span></h2>
-        <h1 class="text-5xl font-bold mb-6">Your Path to Adoption Starts Here</h1>
-        <p class="text-gray-500 max-w-xl mb-8">
-            It is a long established fact that a reader will be distracted by the readable content of a page when 
-            looking at its layout. The point of using Lorem Ipsum is that it has a.
-        </p>
-        <button id="view-more-btn" class=" btn px-5 md:px-8 font-bold bg-0E7A81 ">View More</button>
-      
-       
-      </button>
-
-    </section>
-
-    <script src="JS/index.js"></script>
-        
-    </header>
-</body>
+    <!-- script  -->
+    <script src="./js/commonFunction.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
