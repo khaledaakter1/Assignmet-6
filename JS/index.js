@@ -211,6 +211,5 @@ async function sortByPrice() {
   let newone = data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
   showCard(newone)
 }
-
 allCategory();
 allCard();
