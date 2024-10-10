@@ -17,7 +17,7 @@
 - **Modules**: JavaScript files are modularized for better code organization and reuse, separating concerns such as API calls, DOM manipulation, and utilities.
 
 ## Live Link:
-Check out the live version of Peddy here: 
+Check out the live version of Peddy here: https://peddy-as-6.netlify.app/
 
 ---
 
